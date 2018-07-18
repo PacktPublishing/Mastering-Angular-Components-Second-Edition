@@ -1,0 +1,16 @@
+<h3 class="title">Task Details of task #{{task.id}}</h3>
+<div class="content">
+  <div class="label">Title</div>
+  <mac-editor [content]="task.title"
+              [showControls]="true"
+              (outSaveEdit)="updateTitle($event)"></mac-editor>
+  <div class="label">Description</div>
+  <mac-editor [content]="task.description"
+              [showControls]="true"
+              [tags]="tags"
+              (outSaveEdit)="updateDescription($event)"></mac-editor>
+  <div class="label">Efforts</div>
+  <mac-efforts [efforts]="task.efforts"
+               (outEffortsChange)="updateEfforts($event)">
+  </mac-efforts>
+</div>

@@ -1,0 +1,12 @@
+<div class="label">Estimated:</div>
+<mac-duration [duration]="efforts?.estimated"
+              (outDurationChange)="estimatedChange($event)"></mac-duration>
+<div class="label">Effective:</div>
+<mac-duration [duration]="efforts?.effective"
+              (outDurationChange)="effectiveChange($event)"></mac-duration>
+<button class="button small" (click)="addEffectiveHours(1)">+1h</button>
+<button class="button small" (click)="addEffectiveHours(4)">+4h</button>
+<button class="button small" (click)="addEffectiveHours(8)">+1d</button>
+<mac-efforts-timeline *ngIf="efforts"
+                      [efforts]="efforts">
+</mac-efforts-timeline>

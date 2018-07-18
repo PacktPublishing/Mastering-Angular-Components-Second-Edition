@@ -1,0 +1,20 @@
+<div #editableContentElement
+     class="editable-content"
+     contenteditable="true"
+     macTagsInput></div>
+<mac-tags-select
+  *ngIf="tags && tagsInput.hashTagChange | async"
+  [hashTagInput]="tagsInput.hashTagChange | async"
+  [tags]="tags"
+  (outSelectTag)="selectTag($event)">
+</mac-tags-select>
+<div class="output" [innerHTML]="content ? (content | tags | async) : '-'"></div>
+<div *ngIf="showControls && !editMode"
+     class="controls">
+  <button (click)="beginEdit()" class="icon-edit"></button>
+</div>
+<div *ngIf="showControls && editMode"
+     class="controls">
+  <button (click)="saveEdit()" class="icon-save"></button>
+  <button (click)="cancelEdit()" class="icon-cancel"></button>
+</div>

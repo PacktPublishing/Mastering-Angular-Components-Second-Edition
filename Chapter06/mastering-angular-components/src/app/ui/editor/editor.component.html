@@ -1,0 +1,13 @@
+<div #editableContentElement
+     class="editable-content"
+     contenteditable="true"></div>
+<div class="output">{{content || '-'}}</div>
+<div *ngIf="showControls && !editMode"
+     class="controls">
+  <button (click)="beginEdit()" class="icon-edit"></button>
+</div>
+<div *ngIf="showControls && editMode"
+     class="controls">
+  <button (click)="saveEdit()" class="icon-save"></button>
+  <button (click)="cancelEdit()" class="icon-cancel"></button>
+</div>

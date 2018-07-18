@@ -1,0 +1,18 @@
+<header class="header">
+  <h2 class="title">
+    <mac-editor [content]="project.title"
+                [showControls]="true"
+                (outSaveEdit)="updateTitle($event)"></mac-editor>
+  </h2>
+  <mac-editor [content]="project.description"
+              [showControls]="true"
+              (outSaveEdit)="updateDescription($event)"></mac-editor>
+</header>
+<mac-tabs [tabs]="tabs"
+          [activeTab]="activeTab"
+          (outActivateTab)="activateTab($event)">
+</mac-tabs>
+<mac-task-list-container *ngIf="activeTab.id === 'tasks'">
+</mac-task-list-container>
+<mac-project-comments-container *ngIf="activeTab.id === 'comments'">
+</mac-project-comments-container>

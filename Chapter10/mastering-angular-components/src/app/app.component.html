@@ -1,0 +1,25 @@
+<aside class="side-nav">
+  <mac-user-area [user]="user | async"
+                 [openTasksCount]="openTasksCount | async">
+  </mac-user-area>
+  <mac-navigation>
+    <mac-navigation-section title="Main">
+      <mac-navigation-item title="Dashboard"
+                           navId="dashboard"
+                           routerLinkActive="active"
+                           [routerLink]="['/dashboard']">
+      </mac-navigation-item>
+    </mac-navigation-section>
+    <mac-navigation-section title="Projects">
+      <mac-navigation-item *ngFor="let project of projects | async; trackBy: trackByProjectId"
+                           [navId]="project.id"
+                           [title]="project.title"
+                           routerLinkActive="active"
+                           [routerLink]="['/projects', project.id]">
+      </mac-navigation-item>
+    </mac-navigation-section>
+  </mac-navigation>
+</aside>
+<main class="main">
+  <router-outlet></router-outlet>
+</main>

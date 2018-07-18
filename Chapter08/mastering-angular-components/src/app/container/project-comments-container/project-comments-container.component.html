@@ -1,0 +1,6 @@
+<mac-comments [user]="user | async"
+              [comments]="projectComments | async"
+              [tags]="tags | async"
+              (outCreateComment)="createComment($event)"
+              (outUpdateComment)="updateComment($event)">
+</mac-comments>

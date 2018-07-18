@@ -1,0 +1,7 @@
+<div class="task-info"><strong>#{{task.id}}</strong></div>
+<div class="task-info" *ngIf="task.created">
+  <strong>Created:</strong> {{task.created | calendarTime}}
+</div>
+<div class="task-info" *ngIf="task.efforts">
+  <strong>Effort:</strong> {{task.efforts | formatEfforts}}
+</div>

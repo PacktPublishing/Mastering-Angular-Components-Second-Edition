@@ -1,0 +1,12 @@
+<mac-checkbox [checked]="task.done"
+              (outCheck)="updateTask($event)"></mac-checkbox>
+<div class="content">
+  <div class="title">
+    <mac-editor [content]="task.title"
+                [showControls]="true"
+                (outSaveEdit)="updateTitle($event)"></mac-editor>
+  </div>
+  <button class="button button-small" (click)="showDetails()">Details</button>
+  <button class="delete" (click)="deleteTask()"></button>
+  <mac-task-information [task]="task"></mac-task-information>
+</div>

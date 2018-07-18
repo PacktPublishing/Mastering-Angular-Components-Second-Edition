@@ -1,0 +1,18 @@
+<div class="title">Add new comment</div>
+<div class="add-comment-section">
+  <div #commentContentEditable
+       class="add-comment-box"
+       contenteditable="true">
+  </div>
+  <button (click)="createComment()"
+          class="button" >Add comment</button>
+</div>
+
+<ng-container *ngIf="comments.length > 0">
+  <div class="title">All comments</div>
+  <mac-comment *ngFor="let comment of comments; let index = index"
+               [comment]="comment"
+               [user]="user"
+               (outUpdateComment)="updateComment(index, $event)">
+  </mac-comment>
+</ng-container>

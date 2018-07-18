@@ -1,0 +1,18 @@
+<div class="meta">
+  <div class="user-picture">
+    <mac-profile-picture [user]="comment.user"></mac-profile-picture>
+  </div>
+  <div class="user-name">{{comment.user.name}}</div>
+  <div class="time">
+    {{comment.time | fromNow}}
+  </div>
+</div>
+<div class="main">
+  <div class="content">
+    <mac-editor [content]="comment.content"
+                [showControls]="comment.user.id === user.id"
+                [tags]="tags"
+                (outSaveEdit)="updateComment($event)">
+    </mac-editor>
+  </div>
+</div>

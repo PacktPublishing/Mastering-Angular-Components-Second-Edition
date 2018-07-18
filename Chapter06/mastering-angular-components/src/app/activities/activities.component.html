@@ -1,0 +1,11 @@
+<mac-activity-slider [activities]="activities"
+                     (outSelectionChange)="selectionChange($event)">
+</mac-activity-slider>
+<div class="l-container">
+  <mac-activity *ngFor="let activity of selectedActivities, let odd = odd; let first = first; let last = last"
+                [activity]="activity"
+                [alignment]="odd ? 'left' : 'right'"
+                [startMark]="first"
+                [endMark]="last">
+  </mac-activity>
+</div>

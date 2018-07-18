@@ -1,0 +1,18 @@
+<mac-toggle [buttonList]="taskFilterTypes"
+            [activeButton]="activeTaskFilterType"
+            (outActivate)="activateFilterType($event)">
+</mac-toggle>
+<mac-enter-task (outEnterTask)="addTask($event)"></mac-enter-task>
+<div class="tasks">
+  <mac-task *ngFor="let task of tasks"
+            [task]="task"
+            (outUpdateTask)="updateTask($event)"
+            (outDeleteTask)="deleteTask($event)"
+            (outShowDetails)="showDetails($event)"
+            macDraggable
+            draggableType="task"
+            [draggableData]="task"
+            macDraggableDropZone
+            dropAcceptType="task"
+            (outDropDraggable)="dropTask(task, $event)"></mac-task>
+</div>

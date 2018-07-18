@@ -1,0 +1,10 @@
+<div class="summary-title">{{projectSummary.project.title}}</div>
+<div class="summary-description">
+  {{projectSummary.description}}
+</div>
+<div class="summary-label">Total Efforts</div>
+<mac-efforts-timeline [efforts]="totalEfforts">
+</mac-efforts-timeline>
+<p>{{totalEfforts | formatEfforts}}</p>
+<div class="summary-label">Activity last 24 hours</div>
+<mac-activity-chart [activities]="projectSummary.activities"></mac-activity-chart>

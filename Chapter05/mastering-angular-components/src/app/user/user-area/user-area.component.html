@@ -1,0 +1,8 @@
+<div class="profile">
+  <mac-profile-picture [user]="user"></mac-profile-picture>
+</div>
+<div class="information">
+  <p class="welcome-text">Hi {{user.name}}!</p>
+  <p *ngIf="openTasksCount !== 0">You got <strong>{{openTasksCount}}</strong> open tasks.</p>
+  <p *ngIf="openTasksCount === 0">No open tasks. Hooray!</p>
+</div>

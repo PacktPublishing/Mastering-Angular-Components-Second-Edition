@@ -1,0 +1,7 @@
+<mac-checkbox [checked]="task.done"
+              (outCheck)="updateTask($event)"></mac-checkbox>
+<div class="title">
+  <mac-editor [content]="task.title"
+              [showControls]="true"
+              (outSaveEdit)="updateTitle($event)"></mac-editor>
+</div>
