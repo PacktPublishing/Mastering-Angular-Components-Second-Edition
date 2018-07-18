@@ -1,0 +1,10 @@
+<mac-toggle [buttonList]="taskFilterTypes"
+            [activeButton]="activeTaskFilterType"
+            (outActivate)="activateFilterType($event)">
+</mac-toggle>
+<mac-enter-task (outEnterTask)="addTask($event)"></mac-enter-task>
+<div class="tasks">
+  <mac-task *ngFor="let task of filteredTasks"
+            [task]="task"
+            (outUpdateTask)="updateTask($event)"></mac-task>
+</div>
